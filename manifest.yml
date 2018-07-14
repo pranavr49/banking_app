@@ -1,0 +1,7 @@
+---
+declared-services:
+  my-watson-assistant-service:
+    label: conversation
+    plan: free
+applications:
+- name: banking-app
