@@ -1,0 +1,186 @@
+<html>
+<head>
+  <title>Banking App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="conversation.svg" />
+  <meta property="og:title" content="Conversation Chat Simple" />
+  <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <link rel="stylesheet" href="css/chat.css">
+ 
+ <link rel="stylesheet" href="css/adminlte.css">
+  
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400" rel="stylesheet">
+
+
+</head>
+<body> 
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Your Account</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Your Profile</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Help and Contact us</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">DG Bank</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Ranjit Singh</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+          
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="col-lg-12">
+        <div class="">
+          <div class="">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h5>CURRENT ACCOUNT</h5>
+                <p><b style="font-size: 25px">Rs 50000.00</b> Current Balance</p>
+                <hr>
+                <p><b>Rs 10000</b> Available funds including your Rs 1000 overdraft</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        
+
+       
+            <div class="">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h5>CLARITY CREDIT CARD</h5>
+                  <p><b style="font-size: 25px">Rs 45000.00</b> Current Balance</p>
+                  <hr>
+                  <p><b>Rs 7000</b> Available Credit (Credit limit Rs 5000)</p>
+                  <p><b>Rs 1050</b> Balance on last statement</p>
+                  <p><b>Rs 1000</b> Available Amount</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-credit-card"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6"></div>
+
+        </div>
+        <!-- /.row -->
+        
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2018 <a href="#"></a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b></b> 
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+	<div id="chat-column-holder" class="responsive-column content-column" >
+      <div class="chat-column">
+	  <div id="chat-header"><h4>Welcome to Banking Chatbot</h4><input type="button" class="hide-show" /></div>
+	  <div class="chat-window" style="height: 450px;display: block;">
+        <div id="scrollingChat"></div>
+        <label for="textInput" class="inputOutline">
+          <input id="textInput" class="input responsive-column"
+            placeholder="Type something" type="text"
+            onkeydown="/*globals CanvasJS */
+            ConversationPanel.inputKeyDown(event, this)" >
+        </label>
+		   </div>
+		   </div>
+      </div>
+    </div>
+
+
+  
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/global.js"></script>
+  <script type="text/javascript">
+	$('.hide-show').click(function(){
+		$('.chat-window').slideToggle("slow");		
+      });
+
+	 
+  </script>
+</body>
+</html>
